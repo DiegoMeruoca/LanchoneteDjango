@@ -1,0 +1,14 @@
+{% extends "./baseFuncionario.html" %}
+{% load bootstrap %}
+{% block titulo %}Cadastrar{% endblock titulo %}
+
+{% block conteudo %}
+
+    <form method="post" class="container">
+        {% csrf_token %}
+        {{ form|bootstrap }}
+        <button type="submit" class="btn btn-primary">Salvar</button>
+        <button type="reset" class="btn btn-secondary">Desfazer Alterações</button>
+    </form>
+
+{% endblock conteudo %}

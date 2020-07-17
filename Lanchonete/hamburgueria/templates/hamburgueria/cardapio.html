@@ -1,0 +1,60 @@
+{% extends "./baseFuncionario.html" %}
+
+{% block titulo %}Cardápio{% endblock titulo %}
+
+{% block conteudo %}
+    <h2 class="container">Edidar opções</h2>
+
+    <div class="container bg-primary text-light pt-1 pb-1">
+        <b>Lanches:</b>
+    </div>
+    {% for lanche in lanches %}
+        <div class="container mt-2 mb-2">
+            <b>{{ lanche.nome_lanche }} </b> - R$ {{ lanche.valor_lanche }}
+            <br>{{ lanche.descricao }}
+            <br>
+            <a  href="{% url 'url_up_lanche' lanche.pk %}">
+                <button type="submit" class="btn btn-primary">Editar</button>
+            </a>
+            <a  href="{% url 'url_del_lanche' lanche.pk %}">
+                <button type="submit" class="btn btn-danger">Excluir</button>
+            </a>
+        </div>
+    {% endfor %}
+
+    <div class="container bg-primary text-light pt-1 pb-1">
+        <b>Acompanhamentos:</b>
+    </div>
+    {% for acompanhamento in acompanhamentos %}
+        <div class="container mt-2 mb-2">
+            <b>{{ acompanhamento.nome_acompanhamento }} </b> - R$ {{ acompanhamento.valor_acompanhamento }}
+            <br>{{ acompanhamento.descricao }}
+            <br>
+            <a  href="{% url 'url_up_acompanhamento' acompanhamento.pk %}">
+                <button type="submit" class="btn btn-primary">Editar</button>
+            </a>
+            <a  href="{% url 'url_del_acompanhamento' acompanhamento.pk %}">
+                <button type="submit" class="btn btn-danger">Excluir</button>
+            </a>
+        </div>
+    {% endfor %}
+
+    <div class="container bg-primary text-light pt-1 pb-1">
+        <b>Bebidas:</b>
+    </div>
+    {% for bebida in bebidas %}
+        <div class="container mt-2 mb-2">
+            <b>{{ bebida.nome }} </b> - R$ {{ bebida.valor_bebida }}
+            <br>{{ bebida.tipo }} - {{ bebida.marca }}
+            <br>{{ bebida.descricao }}
+            <br>
+            <a  href="{% url 'url_up_bebida' bebida.pk %}">
+                <button type="submit" class="btn btn-primary">Editar</button>
+            </a>
+            <a  href="{% url 'url_del_bebida' bebida.pk %}">
+                <button type="submit" class="btn btn-danger">Excluir</button>
+            </a>
+        </div>
+    {% endfor %}
+
+{% endblock conteudo %}

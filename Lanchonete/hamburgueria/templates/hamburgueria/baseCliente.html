@@ -1,0 +1,34 @@
+{% extends "./base.html" %}
+{% load static %}
+{% block navega %}
+            <a class="navbar-brand" href="{% url 'url_home' %}">
+				<img src="{% static 'img/logo.png' %}" height=90px class="d-inline-block align-top ">
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar"
+				aria-controls="myNavbar" aria-expanded="false" aria-label="Alterna navegação">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'url_home' %}">Promoções</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'url_cli_cardapio' %}">Cardápio</a>
+					</li>
+                    <li class="nav-item">
+						<a class="nav-link" href="{% url 'url_cli_cadastro_pedido' %}">Realizar Pedido</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'url_cli_cadastro_cliente' %}">Cadastro</a>
+					</li>
+                    <li class="nav-item">
+						<a class="nav-link" href="{% url 'url_sobre' %}">Sobre nós</a>
+					</li>
+				</ul>
+				<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#MyModal">
+					Login
+				</button>
+			</div>
+{% endblock navega %}

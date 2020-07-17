@@ -1,0 +1,43 @@
+{% extends "./baseFuncionario.html" %}
+
+{% block titulo %}Cliente{% endblock titulo %}
+
+{% block conteudo %}
+    <h2 class="container">Pedidos em aberto</h2>
+    <!--Inicia um for para cada transacao na lista trasacoes-->
+
+
+        {% for pedido in pedidos %}<!--Acessa o identificador trasacoes
+         do dicionario enviado pelo view, para accessar as transações feitas-->
+            <div class="container bg-primary text-light pt-1 pb-1">
+                <b>
+                    Pedido {{ pedido.num_pedido }}:
+                    {{ pedido.horario }} - {{ pedido.data }}
+                </b>
+            </div>
+            <div class="container mt-2 mb-2">
+                <b>Cliente:</b> {{ pedido.cliente }}
+                <br><b>Lanches:</b>
+                    {% for lanche in pedido.lanches.all %}
+                        <br>{{ lanche }} - R$ {{ lanche.valor_lanche }}
+                    {% endfor %}
+                <br><b>Acompanhamento:</b>
+                    {% for acompanhamento in pedido.acompanhamentos.all %}
+                        <br>{{ acompanhamento }} - R$ {{ acompanhamento.valor_acompanhamento }}
+                    {% endfor %}
+                <br><b>Bebida:</b>
+                    {% for bebida in pedido.bebidas.all %}
+                        <br>{{ bebida }} - R$ {{ bebida.valor_bebida }}
+                    {% endfor %}
+                <br>
+                <a  href="{% url 'url_up_pedido' pedido.num_pedido %}">
+                    <button type="submit" class="btn btn-primary">Editar pedido</button>
+                </a>
+                <a  href="{% url 'url_del_pedido' pedido.num_pedido %}">
+                    <button type="submit" class="btn btn-danger">Finalizar pedido</button>
+                </a>
+            </div>
+
+        {% endfor %}<!--Finaliza o for-->
+
+{% endblock conteudo %}

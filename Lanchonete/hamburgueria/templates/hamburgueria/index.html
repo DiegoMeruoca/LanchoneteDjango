@@ -1,0 +1,93 @@
+{% extends "./baseCliente.html" %}
+{% load static %}
+{% block titulo %}Promoções{% endblock titulo %}
+{% block conteudo %}
+    <div id="myCarousel" class="carousel slide m-0 p-0" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="{% static 'img/img1.png' %}" alt="Primeiro Slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="{% static 'img/img2.png' %}" alt="Segundo Slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="{% static 'img/img3.png' %}" alt="Terceiro Slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="{% static 'img/img4.png' %}" alt="Terceiro Slide">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Próximo</span>
+        </a>
+    </div>
+    <br>
+    <div class="container bg-primary text-light pt-1 pb-1">
+        <b>Promoções:</b>
+    </div>
+    <br>
+    <div class="container">
+        <div class="row">
+                <div class="col-12 col-md-4">
+                    <div class="container card m-1" >
+                      <img class="card-img-top mt-3" src="{% static 'img/L1.png' %}" alt="Imagem de capa do card">
+                        <div class="card-body">
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rhoncus tortor vel purus laoreet, eget rutrum libero sodales. Aenean varius nisl et commodo molestie.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="container card m-1" >
+                      <img class="card-img-top mt-3" src="{% static 'img/L2.png' %}" alt="Imagem de capa do card">
+                        <div class="card-body">
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rhoncus tortor vel purus laoreet, eget rutrum libero sodales. Aenean varius nisl et commodo molestie.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="container card m-1" >
+                      <img class="card-img-top mt-3" src="{% static 'img/L3.png' %}" alt="Imagem de capa do card">
+                        <div class="card-body">
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rhoncus tortor vel purus laoreet, eget rutrum libero sodales. Aenean varius nisl et commodo molestie.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="container card m-1" >
+                      <img class="card-img-top mt-3" src="{% static 'img/L4.png' %}" alt="Imagem de capa do card">
+                        <div class="card-body">
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rhoncus tortor vel purus laoreet, eget rutrum libero sodales. Aenean varius nisl et commodo molestie.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="container card m-1" >
+                      <img class="card-img-top mt-3" src="{% static 'img/L5.png' %}" alt="Imagem de capa do card">
+                        <div class="card-body">
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rhoncus tortor vel purus laoreet, eget rutrum libero sodales. Aenean varius nisl et commodo molestie.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="container card m-1" >
+                      <img class="card-img-top mt-3" src="{% static 'img/L6.png' %}" alt="Imagem de capa do card">
+                        <div class="card-body">
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rhoncus tortor vel purus laoreet, eget rutrum libero sodales. Aenean varius nisl et commodo molestie.</p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <br>
+{% endblock conteudo %}

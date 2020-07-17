@@ -1,0 +1,41 @@
+{% extends "./base.html" %}
+{% load static %}
+{% block navega %}
+			<a class="navbar-brand" href="{% url 'url_home' %}">
+				<img src="{% static 'img/logo.png' %}" height=90px class="d-inline-block align-top ">
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar"
+				aria-controls="myNavbar" aria-expanded="false" aria-label="Alterna navegação">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'url_lista_pedido' %}">Pedidos em aberto</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'url_cadastro_pedido' %}">Realizar Pedido</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'url_cardapio' %}">Cardápio</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'url_buscar_cliente' %}">Consultar Cliente</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Cadastrar
+						</a>
+						<div class="dropdown-menu h6 bg-dark" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item h5 text-primary" href="{% url 'url_cadastro_lanche' %}">Lanches</a>
+							<a class="dropdown-item h5 text-primary" href="{% url 'url_cadastro_acompanhamento' %}">Acompanhamentos</a>
+							<a class="dropdown-item h5 text-primary" href="{% url 'url_cadastro_bebida' %}">Bebidas</a>
+							<a class="dropdown-item h5 text-primary" href="{% url 'url_cadastro_cliente' %}">Clientes</a>
+						</div>
+					</li>
+
+				</ul>
+			</div>
+{% endblock navega %}

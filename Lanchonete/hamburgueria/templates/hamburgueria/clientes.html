@@ -1,0 +1,39 @@
+{% extends "./baseFuncionario.html" %}
+
+{% block titulo %}Cliente{% endblock titulo %}
+
+{% block conteudo %}
+    <h2 class="container">Clientes cadastrados</h2>
+    <!--Inicia um for para cada transacao na lista trasacoes-->
+    <div>
+
+        {% for cliente in clientes %}<!--Acessa o identificador trasacoes
+         do dicionario enviado pelo view, para accessar as transações feitas-->
+            <div class="container bg-primary text-light pt-1 pb-1">
+                <b>
+                    Cliente {{ cliente.nome_cliente }}
+                </b>
+            </div>
+            <div class="container mt-2 mb-2">
+                <b>Cliente:</b> {{ cliente.nome_cliente }}
+                <br><b>CPF:</b> {{ cliente.cpf_cliente }}
+                <br><b>E-mail:</b> {{ cliente.email_cliente }}
+                <br><b>Telefone:</b> {{ cliente.telefone_cliente }}
+                <br><b>Logradouro:</b> {{ cliente.logradouro }}
+                <br><b>Número:</b> {{ cliente.numero }}
+                <br><b>Complemento:</b> {{ cliente.complemento }}
+                <br><b>Bairro:</b> {{ cliente.bairro }}
+                <br><b>Cidade - UF:</b> {{ cliente.cidade }} - {{ cliente.uf }}
+                <br><b>CEP:</b> {{ cliente.cep }}
+                <br>
+                <a  href="{% url 'url_up_cliente' cliente.pk %}">
+                    <button type="submit" class="btn btn-primary">Editar</button>
+                </a>
+                <a  href="{% url 'url_del_cliente' cliente.pk %}">
+                    <button type="submit" class="btn btn-danger">Excluir</button>
+                </a>
+            </div>
+
+        {% endfor %}<!--Finaliza o for-->
+    </div>
+{% endblock conteudo %}
